@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+long long fibonacciIterative(int n) {
+    if (n <= 1) return n;
+    long long prev = 0, current = 1, next;
+    for (int i = 2; i <= n; i++) {
+        next = prev + current;
+        prev = current;
+        current = next;
+    }
+    return current;
+}
+
+int main() {
+    int n;
+    printf("Enter the value of n: ");
+    scanf("%d", &n);
+    printf("Iterative: Fibonacci term %d is %lld\n", n, fibonacciIterative(n));
+    return 0;
+}
